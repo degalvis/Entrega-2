@@ -2,13 +2,21 @@ import javax.swing.*;
 import java.awt.*;
 
 public class Buttons{
+
+    JButton button;
     
-    public Buttons(String title){
-        JButton button = new JButton(title);
-        button.setBackground(Color.MAGENTA);
-        button.setBorderPainted(false);
-        button.setFocusable(false);
+    public Buttons(JButton a){
+        styleButton(a);
+        /*JButton button = new JButton(title);
+        */
         
+    }
+
+    public JButton styleButton(JButton a){
+        
+       
+
+        return a;
     }
 
 }
