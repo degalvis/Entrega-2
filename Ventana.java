@@ -7,7 +7,8 @@ import java.awt.geom.Ellipse2D;
 
 
 public class Ventana extends JFrame{
-    
+
+
     private final int maxVelX = 3;
     private final int maxVelY = 3;
     private final int minVelX = 0;
@@ -37,23 +38,24 @@ public class Ventana extends JFrame{
         g2.setStroke(new BasicStroke(100.f));
         g2.setPaint(Color.BLUE);
         g2.fillOval(370, 260, 60, 60);
-        g
-        /*g2.setColor(Color.BLUE);
-        Shape circleShape = new Ellipse2D.Double(100,100,50,50);
-        g2.fill(circleShape);
-        g2.draw(circleShape);
-        g2.translate(1000,1000);    */
-
+        move();
     }
 
+    public void draw(){
+        
+    }
+
+    public void update(){
+
+    }
     public void move(){ 
-        if(started == false){
+        /*if(started == false){
             int velocidadRandX = (int)(Math.random()*(maxVelX+1));
             int velocidadRandY = (int)(Math.random()*(maxVelY+1));
             setVelX(velocidadRandX);
             setVelY(velocidadRandY);
             started = true;
-        }
+        }*/
     }
 
 

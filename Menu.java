@@ -18,14 +18,15 @@ public class Menu extends JFrame{
         setLayout(null);
         setResizable(false);
         setSize(800, 600);
+        setLocation(270, 220);
         
-        panel_menu.setBackground(Color.GRAY);
+        //panel_menu.setBackground(Color.GRAY);
         panel_menu.setSize(800,600);
         panel_menu.setLocation(0,0);
         
-        level1 = style(level1);
+        /*level1 = style(level1);
         level2 = style(level2);
-        level3 = style(level3);
+        level3 = style(level3);*/
 
         /*
         level1.addActionListener(this);
@@ -36,14 +37,14 @@ public class Menu extends JFrame{
         }*/
         
 
-        panel_menu.setBorder(BorderFactory.createEmptyBorder(150, 300, 150, 300));
+        /*panel_menu.setBorder(BorderFactory.createEmptyBorder(150, 300, 150, 300));
         BoxLayout boxLayout = new BoxLayout(panel_menu, BoxLayout.Y_AXIS);
-        panel_menu.setLayout(boxLayout);
+        panel_menu.setLayout(boxLayout);*/
         panel_menu.add(myName);
         panel_menu.add(u);
-        panel_menu.add(level1);
+        /*panel_menu.add(level1);
         panel_menu.add(level2);
-        panel_menu.add(level3);
+        panel_menu.add(level3);*/
         
         add(panel_menu);
         
