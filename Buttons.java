@@ -13,9 +13,6 @@ public class Buttons{
     }
 
     public JButton styleButton(JButton a){
-        
-       
-
         return a;
     }
 
