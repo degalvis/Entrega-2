@@ -1,10 +1,10 @@
 import java.awt.Graphics;
 import java.awt.Image;
-import java.util.Random;
 
 import javax.swing.JPanel;
 
 public class Panel extends JPanel implements Runnable{
+    private boolean cerrar = false;
     private static final int WIDTH = 800;
     private static final int HEIGHT = 600;
     private static final int DIAMETER = 40;
@@ -12,7 +12,6 @@ public class Panel extends JPanel implements Runnable{
     private Image image;
     private Graphics graphics;
     private Thread Gamethread;
-    private Random random;
     private KeyListeners listener;
 
     
@@ -30,7 +29,6 @@ public class Panel extends JPanel implements Runnable{
     }
 
     public void createBall(){
-        random = new Random();
         pelota = new Pelota((WIDTH/2)-(DIAMETER/2),(HEIGHT/2)-(DIAMETER/2), DIAMETER,DIAMETER);
     }
 
@@ -52,48 +50,41 @@ public class Panel extends JPanel implements Runnable{
 
     public void collision(){
         if(pelota.yPosition <= 0) 
-			//pelota.setDirecY(/*-pelota.yVelocity*/0);
             pelota.yVelocity *= -1;
 		
 		if(pelota.yPosition >= HEIGHT-DIAMETER) 
-			//pelota.setDirecY(/*-pelota.yVelocity*/0);
             pelota.yVelocity *= -1;
 
 
         if(pelota.xPosition <=0) 
-			//pelota.setDirecX(/*-pelota.xVelocity*/0);
             pelota.xVelocity *= -1;
 
 		
 		if(pelota.xPosition >= WIDTH-DIAMETER) 
-			//pelota.setDirecX(/*-pelota.xVelocity*/0);
             pelota.xVelocity *= -1;
-
     }
 
     public void update(){
         if(listener.getUp() == true){
-            if(pelota.yVelocity > pelota.MAX_VEL){
+            if(pelota.yVelocity < pelota.MAX_VEL){
                 pelota.yVelocity -= 1;
             }
         }
         if(listener.getDown()== true){
-            if(pelota.yVelocity < pelota.MIN_VEL){
+            if(pelota.yVelocity > pelota.MIN_VEL){
                 pelota.yVelocity += 1;
             }
         }
         if(listener.getForwards() == true){
-            if(pelota.yVelocity > pelota.MAX_VEL){
+            if(pelota.yVelocity < pelota.MAX_VEL){
                 pelota.xVelocity -= 1;
-
             }
         }
         if(listener.getBackwards() == true){
-            if(pelota.yVelocity < pelota.MIN_VEL){
+            if(pelota.yVelocity > pelota.MIN_VEL){
                 pelota.xVelocity += 1;
             }
         }
-
     }
 
     public void run() {
@@ -106,12 +97,13 @@ public class Panel extends JPanel implements Runnable{
 			delta += (now -lastTime)/ns;
 			lastTime = now;
 			if(delta >=1) {
-                move();
+                if(listener.pPressed() == false){
+                    move();
+                }
                 collision();
 				repaint();
 				delta--;
 			}
 		}
-        
 	}
 }

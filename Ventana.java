@@ -4,10 +4,9 @@ import java.awt.*;
 public class Ventana extends JFrame{
 
 
-    private Panel panel;
+    private Panel panel = new Panel();
 
     public Ventana(){
-        panel = new Panel();
         setTitle("Ventana");
         setVisible(true);
         setLayout(null);
@@ -22,10 +21,10 @@ public class Ventana extends JFrame{
 
     public static void main(String[] args) throws InterruptedException {
         Menu menu = new Menu();
-        Thread.sleep(2000);
+        Thread.sleep(10000);
         menu.dispose();
         Ventana ventana = new Ventana();
-
+        
 
     }
     

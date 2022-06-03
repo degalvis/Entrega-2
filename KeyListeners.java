@@ -2,7 +2,7 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 public class KeyListeners implements KeyListener{
-    private boolean upPressed, downPressed, forwardPressed, backwardPressed, rPressed, qPressed;
+    private boolean upPressed, downPressed, forwardPressed, backwardPressed, pPressed;
     
     public boolean getUp(){
         return upPressed;
@@ -20,12 +20,8 @@ public class KeyListeners implements KeyListener{
         return backwardPressed;
 
     }
-    public boolean r(){
-        return rPressed;
-    }
-
-    public boolean q(){
-        return qPressed;
+    public boolean pPressed(){
+        return pPressed;
     }
 
     @Override
@@ -46,13 +42,9 @@ public class KeyListeners implements KeyListener{
         
         if(code == KeyEvent.VK_LEFT)
             backwardPressed = true;
-            
-        if(code == KeyEvent.VK_R)
-            rPressed = true;
-         
-        if(code == KeyEvent.VK_Q)
-            qPressed = true;
-             
+        
+        if(code == KeyEvent.VK_P)
+            pPressed = true;        
     }
 
     @Override
@@ -71,12 +63,9 @@ public class KeyListeners implements KeyListener{
         if(code == KeyEvent.VK_LEFT)
             backwardPressed = false;
             
-        if(code == KeyEvent.VK_R)
-            rPressed = false;
-         
-        if(code == KeyEvent.VK_Q)
-            qPressed = false;
-           
+        if(code == KeyEvent.VK_P)
+            pPressed = false;
+                
     }
 
 }

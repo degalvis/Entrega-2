@@ -18,30 +18,12 @@ public class Pelota extends Rectangle{
         super(x, y, width, height);
         rand = new Random();
         int randomNumX = rand.nextInt(2);
-
-        if(randomNumX == 0){
+        if(randomNumX == 0)
             xVelocity*=-1;
-        }
-        //setDirecX(randomNumX);
 
         int randomNumY = rand.nextInt(2);
-        if(randomNumY == 0){
+        if(randomNumY == 0)
             yVelocity *= -1;
-        }
-        //setDirecY(randomNumY);
-    }
-
-    public void setDirecY(int randomInt){
-        //this.yVelocity = randomInt;
-        /*if(randomInt == 0)
-            yVelocity = -yVelocity;
-    */}
-
-    public void setDirecX(int randomInt){
-        //this.xVelocity = randomInt;
-        /*if(randomInt == 0)
-            xVelocity = -xVelocity;
-*/
     }
 
     public void move(){
